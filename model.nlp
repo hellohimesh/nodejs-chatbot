@@ -1,0 +1,583 @@
+{
+  "settings": {
+    "languages": [
+      "en",
+      "hi",
+      "gu"
+    ],
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "en",
+      "hi",
+      "gu"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "en": {
+        "settings": {
+          "locale": "en",
+          "trainByDomain": false,
+          "tag": "domain-manager-en",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "goodby": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,care,take": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "later,see,you": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "bye,for,now": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "go,i,must": {
+            "intent": "greetings.bye",
+            "domain": "default"
+          },
+          "price": {
+            "intent": "greetings.hello",
+            "domain": "default"
+          },
+          "are,who,you": {
+            "intent": "personal.info",
+            "domain": "default"
+          },
+          "about,me,self,tell,your": {
+            "intent": "personal.info",
+            "domain": "default"
+          },
+          "about,me,share,someth,you": {
+            "intent": "personal.info",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "greetings.bye": "default",
+          "greetings.hello": "default",
+          "personal.info": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "goodbye",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye take care",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "see you later",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "bye for now",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "i must go",
+            "intent": "greetings.bye"
+          },
+          {
+            "domain": "default",
+            "utterance": "price",
+            "intent": "greetings.hello"
+          },
+          {
+            "domain": "default",
+            "utterance": "who are you?",
+            "intent": "personal.info"
+          },
+          {
+            "domain": "default",
+            "utterance": "tell me about your self",
+            "intent": "personal.info"
+          },
+          {
+            "domain": "default",
+            "utterance": "share me something about you",
+            "intent": "personal.info"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "en",
+              "tag": "nlu-en",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "goodby": 1,
+              "bye": 1,
+              "take": 1,
+              "care": 1,
+              "see": 1,
+              "you": 1,
+              "later": 1,
+              "for": 1,
+              "now": 1,
+              "i": 1,
+              "must": 1,
+              "go": 1,
+              "price": 1,
+              "who": 1,
+              "are": 1,
+              "tell": 1,
+              "me": 1,
+              "about": 1,
+              "your": 1,
+              "self": 1,
+              "share": 1,
+              "someth": 1
+            },
+            "intents": {
+              "greetings.bye": 1,
+              "greetings.hello": 1,
+              "personal.info": 1
+            },
+            "intentFeatures": {
+              "greetings.bye": {
+                "goodby": 1,
+                "bye": 1,
+                "take": 1,
+                "care": 1,
+                "see": 1,
+                "you": 1,
+                "later": 1,
+                "for": 1,
+                "now": 1,
+                "i": 1,
+                "must": 1,
+                "go": 1
+              },
+              "greetings.hello": {
+                "price": 1
+              },
+              "personal.info": {
+                "who": 1,
+                "are": 1,
+                "you": 1,
+                "tell": 1,
+                "me": 1,
+                "about": 1,
+                "your": 1,
+                "self": 1,
+                "share": 1,
+                "someth": 1
+              }
+            },
+            "featuresToIntent": {
+              "goodby": [
+                "greetings.bye"
+              ],
+              "bye": [
+                "greetings.bye"
+              ],
+              "take": [
+                "greetings.bye"
+              ],
+              "care": [
+                "greetings.bye"
+              ],
+              "see": [
+                "greetings.bye"
+              ],
+              "you": [
+                "greetings.bye",
+                "personal.info"
+              ],
+              "later": [
+                "greetings.bye"
+              ],
+              "for": [
+                "greetings.bye"
+              ],
+              "now": [
+                "greetings.bye"
+              ],
+              "i": [
+                "greetings.bye"
+              ],
+              "must": [
+                "greetings.bye"
+              ],
+              "go": [
+                "greetings.bye"
+              ],
+              "price": [
+                "greetings.hello"
+              ],
+              "who": [
+                "personal.info"
+              ],
+              "are": [
+                "personal.info"
+              ],
+              "tell": [
+                "personal.info"
+              ],
+              "me": [
+                "personal.info"
+              ],
+              "about": [
+                "personal.info"
+              ],
+              "your": [
+                "personal.info"
+              ],
+              "self": [
+                "personal.info"
+              ],
+              "share": [
+                "personal.info"
+              ],
+              "someth": [
+                "personal.info"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "en",
+                "tag": "nlu-en",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "goodby",
+                "bye",
+                "take",
+                "care",
+                "see",
+                "you",
+                "later",
+                "for",
+                "now",
+                "i",
+                "must",
+                "go",
+                "price",
+                "who",
+                "are",
+                "tell",
+                "me",
+                "about",
+                "your",
+                "self",
+                "share",
+                "someth"
+              ],
+              "intents": [
+                "greetings.bye",
+                "greetings.hello",
+                "personal.info"
+              ],
+              "perceptrons": [
+                [
+                  8.70889663696289,
+                  4.469077110290527,
+                  2.234586000442505,
+                  2.234586000442505,
+                  4.285401344299316,
+                  0.36411982774734497,
+                  4.285401344299316,
+                  2.2345705032348633,
+                  2.2345705032348633,
+                  2.979499340057373,
+                  2.979499340057373,
+                  2.979499340057373,
+                  -5.138172149658203,
+                  -2.848583698272705,
+                  -2.848583698272705,
+                  -0.6312320828437805,
+                  -1.7815282344818115,
+                  -1.7815282344818115,
+                  -0.6312320828437805,
+                  -0.6312320828437805,
+                  -1.0714011192321777,
+                  -1.0714011192321777,
+                  5.338162642668383
+                ],
+                [
+                  -2.366077184677124,
+                  -1.2788406610488892,
+                  -0.6399903893470764,
+                  -0.6399903893470764,
+                  -0.601952075958252,
+                  -1.3502047061920166,
+                  -0.601952075958252,
+                  -0.6379752159118652,
+                  -0.6379752159118652,
+                  -0.850748598575592,
+                  -0.850748598575592,
+                  -0.850748598575592,
+                  11.448202133178711,
+                  -0.6114354133605957,
+                  -0.6114354133605957,
+                  -0.46004924178123474,
+                  -0.5959910154342651,
+                  -0.5959910154342651,
+                  -0.46004924178123474,
+                  -0.46004924178123474,
+                  -0.12216493487358093,
+                  -0.12216493487358093,
+                  2.5735008273865025
+                ],
+                [
+                  -1.1301153898239136,
+                  -0.7646417021751404,
+                  -0.3870323598384857,
+                  -0.3870323598384857,
+                  -2.399442434310913,
+                  3.666433095932007,
+                  -2.399442434310913,
+                  -0.3120892643928528,
+                  -0.3120892643928528,
+                  -0.44474008679389954,
+                  -0.44474008679389954,
+                  -0.44474008679389954,
+                  -1.116020917892456,
+                  4.74474573135376,
+                  4.74474573135376,
+                  2.102813482284546,
+                  3.4242496490478516,
+                  3.4242496490478516,
+                  2.102813482284546,
+                  2.102813482284546,
+                  1.3213613033294678,
+                  1.3213613033294678,
+                  1.1282013705129135
+                ]
+              ]
+            }
+          }
+        }
+      },
+      "hi": {
+        "settings": {
+          "locale": "hi",
+          "trainByDomain": false,
+          "tag": "domain-manager-hi",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {},
+        "intentDict": {},
+        "sentences": [],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "hi",
+              "tag": "nlu-hi",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {},
+            "intents": {},
+            "intentFeatures": {},
+            "featuresToIntent": {},
+            "neuralNetwork": {
+              "settings": {
+                "locale": "hi",
+                "tag": "nlu-hi",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              }
+            }
+          }
+        }
+      },
+      "gu": {
+        "settings": {
+          "locale": "gu",
+          "trainByDomain": false,
+          "tag": "domain-manager-gu",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {},
+        "intentDict": {},
+        "sentences": [],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "gu",
+              "tag": "nlu-gu",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {},
+            "intents": {},
+            "intentFeatures": {},
+            "featuresToIntent": {},
+            "neuralNetwork": {
+              "settings": {
+                "locale": "gu",
+                "tag": "nlu-gu",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "en",
+        "goodbye"
+      ],
+      [
+        "en",
+        "bye take care"
+      ],
+      [
+        "en",
+        "see you later"
+      ],
+      [
+        "en",
+        "bye for now"
+      ],
+      [
+        "en",
+        "i must go"
+      ],
+      [
+        "en",
+        "price"
+      ],
+      [
+        "en",
+        "who are you?"
+      ],
+      [
+        "en",
+        "tell me about your self"
+      ],
+      [
+        "en",
+        "share me something about you"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "en": {
+        "greetings.bye": [
+          {
+            "answer": "see you soon!"
+          },
+          {
+            "answer": "Till next time"
+          },
+          {
+            "answer": "bye bye"
+          },
+          {
+            "answer": "have a great day"
+          }
+        ],
+        "greetings.hello": [
+          {
+            "answer": "price is 3000"
+          }
+        ],
+        "personal.info": [
+          {
+            "answer": "i am himesh, i am a programmer "
+          },
+          {
+            "answer": "i am himesh, i love programming"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}
